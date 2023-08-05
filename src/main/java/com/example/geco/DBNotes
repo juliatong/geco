@@ -1,0 +1,35 @@
+1. Enums
+An ENUM is a string object
+Each enumeration value has an index:
+The elements listed in the column specification are assigned index numbers, beginning with 1.
+
+The index value of the empty string error value is 0. This means that you can use the following SELECT statement to find rows into which invalid ENUM values were assigned:
+
+The index of the NULL value is NULL.
+
+The term “index” here refers to a position within the list of enumeration values. It has nothing to do with table indexes.
+
+For example, a column specified as ENUM('Mercury', 'Venus', 'Earth') can have any of the values shown here. The index of each value is also shown.
+
+Value	    Index
+NULL	    NULL
+''	        0
+'Mercury'	1
+'Venus'	    2
+'Earth'	    3
+
+2. Single vs Double quotes
+[S]ingle quotes are for [S]trings Literals (date literals are also strings);
+[D]ouble quotes are for [D]atabase Identifiers;
+INSERT INTO "USERS" ("LOGIN", "PASSWORD", "DT_BIRTH") VALUES ('EDUARDO', '12345678', '1980-09-06');
+
+3. Alias
+SELECT column1 [AS] alias1,
+       column2 [AS] alias2,
+       ...
+       columnN [AS] aliasN
+
+4. Deal With NULL Values in SQL
+    column is Null
+    IS NOT NULL
+    ISNULL(expression, value), provide a default value to return if it is NULl
